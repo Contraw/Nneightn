@@ -2,7 +2,7 @@
 FROM node:18
 
 # Create a volume for n8n data
-RUN docker volume create n8n_data
+VOLUME /home/node/.n8n
 
 # Set the working directory
 WORKDIR /usr/src/app
