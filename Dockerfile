@@ -1,5 +1,5 @@
 # Use a base image that has Node.js installed
-FROM node:18
+FROM arm32v7/node:18-buster
 
 # Create a volume for n8n data
 VOLUME /home/node/.n8n
@@ -11,7 +11,7 @@ WORKDIR /usr/src/app
 COPY dock.sh /usr/src/app/dock.sh
 
 # Expose the port
-EXPOSE $PORT
+EXPOSE ${PORT}
 
 # Start the n8n service
 CMD ["sh", "/usr/src/app/dock.sh"]
