@@ -8,7 +8,7 @@ VOLUME /home/node/.n8n
 WORKDIR /usr/src/app
 
 # Copy the .sh file into the container
-COPY dock.sh ./dock.sh
+COPY dock.sh /usr/src/app/dock.sh
 
 # Expose the port
 EXPOSE $PORT
