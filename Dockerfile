@@ -11,7 +11,7 @@ WORKDIR /usr/src/app
 COPY dock.sh ./dock.sh
 
 # Expose the port
-EXPOSE 5678
+EXPOSE $PORT
 
 # Start the n8n service
 CMD ["sh", "/usr/src/app/dock.sh"]
