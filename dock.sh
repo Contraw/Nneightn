@@ -1,5 +1,3 @@
-docker volume create n8n_data
-
 docker run -it --rm \
  --name n8n \
  -p 5678:5678 \
