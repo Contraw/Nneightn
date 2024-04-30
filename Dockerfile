@@ -1,8 +1,17 @@
-# Set the working directory in the container
+# Use a base image that has Node.js installed
+FROM node:18
+
+# Create a volume for n8n data
+RUN docker volume create n8n_data
+
+# Set the working directory
 WORKDIR /usr/src/app
 
-# Install n8n globally using npm
-RUN npm install n8n -g
+# Copy the .sh file into the container
+COPY dock.sh ./dock.sh
 
-# Start n8n with the --tunnel option
-CMD ["n8n", "start", "--tunnel"]
+# Expose the port
+EXPOSE 5678
+
+# Start the n8n service
+CMD ["sh", "/usr/src/app/dock.sh"]
